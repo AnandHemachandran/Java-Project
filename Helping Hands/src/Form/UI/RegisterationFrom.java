@@ -19,14 +19,16 @@ public class RegisterationFrom extends JFrame {
             JTextField tf = new JTextField();
             JTextField pw = new JTextField();
             JTextField pwc = new JTextField();
+            JTextField ag = new JTextField();
             JLabel l1 = new JLabel("Name");
             JLabel l2 = new JLabel("Location");
             JLabel l3 = new JLabel("Phone Number");
-            JLabel l4 = new JLabel("Needs");
+            JLabel l4 = new JLabel("Category");
             JLabel l5 = new JLabel("Gender");
+            JLabel l6 = new JLabel("Age");
             JLabel l7 = new JLabel("");
-            String country[] = {""};
-            JComboBox<String> cb = new JComboBox(country);
+            String list[] = {"Select","Victim","Rescurer"};
+            JComboBox<String> cb = new JComboBox(list);
             JRadioButton r1 = new JRadioButton("A. Male");
             JRadioButton r2 = new JRadioButton("B. Female");
             ButtonGroup bG = new ButtonGroup();
@@ -39,14 +41,18 @@ public class RegisterationFrom extends JFrame {
             l1.setBounds(20,50,150,20);
             l2.setBounds(20,80,150,20);
             l3.setBounds(20,110,150,20);
-            l4.setBounds(20,140,150,20);
-            l5.setBounds(20,170,150,20);
+            l4.setBounds(20,170,150,20);
+            l5.setBounds(20,200,150,20);
+            l6.setBounds(20,140,150,20);
             tf.setBounds(150,50,150,20);
             pw.setBounds(150,80,150,20);
             pwc.setBounds(150,110,150,20);
-            cb.setBounds(150,140,150,20);
-            r1.setBounds(150,170,110,20);
-            r2.setBounds(260,170,110,20);
+            ag.setBounds(150,140,150,20);
+            cb.setBounds(150,170,150,20);
+            r1.setBounds(150,200,110,20);
+            r2.setBounds(260,200,110,20);
+
+
             b.setBounds(20,260,120,20);
             b1.setBounds(150,260,120,20);
             l7.setBounds(10,290,450,20);
@@ -93,6 +99,8 @@ public class RegisterationFrom extends JFrame {
             add(l4);
             add(cb);
             add(l5);
+            add(l6);
+            add(ag);
             add(r1);
             add(r2);
             add(b);
