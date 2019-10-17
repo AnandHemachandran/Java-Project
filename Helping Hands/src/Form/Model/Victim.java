@@ -6,7 +6,6 @@ public class Victim {
         private String name,location,email,contactno;
         public Victim() {}
         public Victim(String name, String location, String email, String contactno) {
-            super();
             this.name = name;
             this.location = location;
             this.email = email;

@@ -1,9 +1,15 @@
 package Form.UI;
 
+import javax.imageio.ImageIO;
+import java.awt.Image;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.geom.RoundRectangle2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class MainPanel extends JFrame {
 
@@ -14,11 +20,21 @@ public class MainPanel extends JFrame {
     }
     public void init()
     {
+        JPanel panel = new JPanel();
+        panel.setBounds(50,75,450,350);
+        panel.setLayout(null);
+
         JButton b1 = new JButton("Register");
+        b1.setBorder(new RoundedBorder(20));
+        b1.setBackground(new Color(0x2dce98));
+        b1.setFont(new java.awt.Font("Product Sans", 2, 28));
+        b1.setBounds(120,80,200,80);
+
+
         JButton b2 = new JButton("Inquiry");
-
-
-        b1.setBounds(120,100,200,80);
+        b2.setBorder(new RoundedBorder(20));
+        b2.setBackground(new Color(0x1976d2));
+        b2.setFont(new java.awt.Font("Product Sans", 2, 28));
         b2.setBounds(120,200,200,80);
 
         b1.addActionListener(new ActionListener()
@@ -39,12 +55,30 @@ public class MainPanel extends JFrame {
             }
         });
 
-        add(b1);
-        add(b2);
-        setSize(450,480);
+
+        panel.add(b1);
+        panel.add(b2);
+        BufferedImage image;
+        try {
+            image = ImageIO.read(new File("/home/anand/Java-Project/Helping Hands/src/Form/UI/Logo.jpeg"));
+        }
+        catch (IOException ex) {
+            image = null;
+            System.out.println("You did't get the image");
+        }
+
+
+        JLabel label = new JLabel(new ImageIcon(image));
+        label.setBounds(550,80,400,400);
+        add(label);
+        add(panel);
+
+
+        setSize(1000,540);
         setLayout(null);
-        setLocationRelativeTo(null);
         setVisible(true);
+        setLocationRelativeTo(null);
+        getContentPane().setBackground(new Color(0x313131));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     }
