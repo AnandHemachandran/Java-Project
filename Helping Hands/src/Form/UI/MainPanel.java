@@ -60,7 +60,7 @@ public class MainPanel extends JFrame {
         panel.add(b2);
         BufferedImage image;
         try {
-            image = ImageIO.read(new File("/home/anand/Java-Project/Helping Hands/src/Form/UI/Logo.jpeg"));
+            image = ImageIO.read(new File("./src/Form/UI/Logo.jpeg"));
         }
         catch (IOException ex) {
             image = null;
@@ -69,7 +69,7 @@ public class MainPanel extends JFrame {
 
 
         JLabel label = new JLabel(new ImageIcon(image));
-        label.setBounds(550,80,400,400);
+        label.setBounds(550,60,400,400);
         add(label);
         add(panel);
 

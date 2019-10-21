@@ -6,6 +6,8 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.*;
+
 
 
 public class Inquiry extends JFrame
@@ -30,7 +32,7 @@ public class Inquiry extends JFrame
         JButton b3 = new JButton("Assign");
         String list[] = {"Select","TVM","PTA"};
         JComboBox<String> cb = new JComboBox(list);
-        String[] columnNames = { "Name", "Age", "Location","phone No" };
+        String[] columnNames = { "Name", "Age", "Location","Phone No." };
 
         l1.setBounds(20,50,150,20);
         cb.setBounds(150,50,150,20);
@@ -47,22 +49,29 @@ public class Inquiry extends JFrame
         model.addColumn("Check");
         Object[] newRowData = {5,5,5,5};
 
+
+
         model.addRow(newRowData);
 
+        try {
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/victims", "root", "root"); //Connecting MySQL to java via JDBC API.
+            Statement stmt = con.createStatement();
+        }
+        catch(Exception e1){
+            System.out.println(e1);
+        }
 
         add(l1);
         add(cb);
         add(b1);
         add(b2);
         add(b3);
+
         getContentPane().add(scrollPane);
-
-
         setLocationRelativeTo(null);
         setSize(700,500);
         setLayout(null);
         setVisible(true);
-
 
     }
 }
