@@ -3,14 +3,15 @@ package Form.Model;
 public class Victim {
 
         private int id;
-        private String name,location,contactno;
+        private String name,location,contactno,region;
         boolean completed;
         public Victim() {}
-        public Victim(String name, String location, String contactno, boolean completed) {
+        public Victim(String name, String location, String contactno, boolean completed, String region) {
             this.name = name;
             this.location = location;
             this.contactno = contactno;
             this.completed = completed;
+            this.region = region;
         }
         public int getId() {
             return id;
@@ -41,5 +42,11 @@ public class Victim {
     }
         public void setCheck(boolean com) {
         this.completed  = com;
+        }
+        public String getRegion() {
+            return region;
+        }
+        public void setRegion(String location) {
+            this.region = region;
         }
 }

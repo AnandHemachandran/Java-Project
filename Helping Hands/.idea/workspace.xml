@@ -6,6 +6,8 @@
       <change beforePath="$PROJECT_DIR$/out/production/Helping Hands/Form/Model/Rescuer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Helping Hands/Form/Model/Rescuer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Helping Hands/Form/Model/Victim.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Helping Hands/Form/Model/Victim.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Helping Hands/Form/UI/Inquiry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Helping Hands/Form/UI/Inquiry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Helping Hands/Form/UI/RegisterationFrom$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Helping Hands/Form/UI/RegisterationFrom$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Helping Hands/Form/UI/RegisterationFrom$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Helping Hands/Form/UI/RegisterationFrom$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Helping Hands/Form/UI/RegisterationFrom$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Helping Hands/Form/UI/RegisterationFrom$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Helping Hands/Form/UI/RegisterationFrom.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Helping Hands/Form/UI/RegisterationFrom.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/Model/Rescuer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Model/Rescuer.java" afterDir="false" />
@@ -52,7 +54,7 @@
         <entry file="file://$PROJECT_DIR$/src/Form/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="176">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#137#138#0" expanded="true" />
@@ -65,8 +67,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Form/Model/Victim.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+            <state relative-caret-position="682">
+              <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+              <folding>
+                <element signature="e#741#742#0" expanded="true" />
+                <element signature="e#780#781#0" expanded="true" />
+                <element signature="e#831#832#0" expanded="true" />
+                <element signature="e#879#880#0" expanded="true" />
+                <element signature="e#1267#1268#0" expanded="true" />
+                <element signature="e#1306#1307#0" expanded="true" />
+                <element signature="e#1357#1358#0" expanded="true" />
+                <element signature="e#1405#1406#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,17 +111,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Form/Model/Rescuer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="78" selection-start-line="8" selection-start-column="78" selection-end-line="8" selection-end-column="78" />
+            <state relative-caret-position="440">
+              <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Form/UI/Inquiry.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
+            <state relative-caret-position="-606">
+              <caret line="41" column="44" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -117,11 +129,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Form/UI/RegisterationFrom.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="178" column="21" selection-start-line="178" selection-start-column="21" selection-end-line="178" selection-end-column="21" />
+            <state relative-caret-position="129">
+              <caret line="196" column="19" lean-forward="true" selection-start-line="196" selection-start-column="19" selection-end-line="196" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -143,6 +155,8 @@
       <find>l6</find>
       <find>password</find>
       <find>bg</find>
+      <find>jt</find>
+      <find>scro</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -165,8 +179,8 @@
         <option value="$PROJECT_DIR$/src/Form/UI/MainPanel.java" />
         <option value="$PROJECT_DIR$/src/Form/Model/Victim.java" />
         <option value="$PROJECT_DIR$/src/Form/Model/Rescuer.java" />
-        <option value="$PROJECT_DIR$/src/Form/UI/RegisterationFrom.java" />
         <option value="$PROJECT_DIR$/src/Form/UI/Inquiry.java" />
+        <option value="$PROJECT_DIR$/src/Form/UI/RegisterationFrom.java" />
       </list>
     </option>
   </component>
@@ -343,12 +357,12 @@
       <workItem from="1571662445119" duration="3561000" />
       <workItem from="1571805475960" duration="767000" />
       <workItem from="1571918537701" duration="16000" />
-      <workItem from="1571923336158" duration="2636000" />
+      <workItem from="1571923336158" duration="13062000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56690000" />
+    <option name="totallyTimeSpent" value="67116000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -418,13 +432,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/Model/Victim.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Form/UI/MainPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1166">
@@ -449,7 +456,7 @@
     <entry file="file://$PROJECT_DIR$/src/Form/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#137#138#0" expanded="true" />
@@ -458,27 +465,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/Model/Rescuer.java">
+    <entry file="file://$PROJECT_DIR$/src/Form/Model/Victim.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="78" selection-start-line="8" selection-start-column="78" selection-end-line="8" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/UI/RegisterationFrom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="178" column="21" selection-start-line="178" selection-start-column="21" selection-end-line="178" selection-end-column="21" />
+        <state relative-caret-position="682">
+          <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#741#742#0" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+            <element signature="e#831#832#0" expanded="true" />
+            <element signature="e#879#880#0" expanded="true" />
+            <element signature="e#1267#1268#0" expanded="true" />
+            <element signature="e#1306#1307#0" expanded="true" />
+            <element signature="e#1357#1358#0" expanded="true" />
+            <element signature="e#1405#1406#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Form/UI/Inquiry.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
+        <state relative-caret-position="-606">
+          <caret line="41" column="44" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/Model/Rescuer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/UI/RegisterationFrom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="196" column="19" lean-forward="true" selection-start-line="196" selection-start-column="19" selection-end-line="196" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

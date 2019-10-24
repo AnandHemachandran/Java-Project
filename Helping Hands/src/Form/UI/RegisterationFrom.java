@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 public class RegisterationFrom extends JFrame {
         JFrame f;
+
         boolean flag = true;
         String error = "";
         int input =0;
@@ -85,7 +86,7 @@ public class RegisterationFrom extends JFrame {
             cb.setBounds(150,170,150,20);
             r1.setBounds(150,200,110,20);
             r2.setBounds(260,200,110,20);
-            cb2.setBounds(40,240,150,20);
+            cb2.setBounds(40,230,250,30);
 
             b.setBounds(20,290,160,30);
             b1.setBounds(200,290,160,30);
@@ -115,12 +116,8 @@ public class RegisterationFrom extends JFrame {
 
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    name.setText("");
-                    location.setText("");
-                    phone.setText("");
-                    cb.setSelectedIndex(0);
+                    setVisible(false);
 
-                    l7.setText("");
                 }
             });
 
@@ -131,28 +128,51 @@ public class RegisterationFrom extends JFrame {
                     String loc = location.getText();
                     String phoneno = phone.getText();
                     String category = (String)(cb.getSelectedItem());
-                    try {
-                        Class.forName("com.mysql.jdbc.Driver");
-                        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/victim", "root", "root");
-                        Statement statement = con.createStatement();
+                    String region = (String)(cb2.getSelectedItem());
+                    if(category == "Victim") {
+                        try {
+                            Class.forName("com.mysql.jdbc.Driver");
+                            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/victim", "root", "root");
+                            Statement statement = con.createStatement();
 
-                        String query ="";
-                        if(category == "Victim"){
-                            query = "INSERT INTO Victims VALUES ( ? , ? , ? , 0 );";
-                        }
-                        PreparedStatement preparedStmt;
-                        if(query != "") {
-                            preparedStmt = con.prepareStatement(query);
-                            preparedStmt.setString (1,n);
-                            preparedStmt.setString (2,phoneno);
-                            preparedStmt.setString (3,loc);
+                            String query = "";
+                            query = "INSERT INTO Victims VALUES ( ? , ? , ? , 0, ? );";
 
-                            preparedStmt.executeUpdate();
+                            PreparedStatement preparedStmt;
+                            if (query != "") {
+                                preparedStmt = con.prepareStatement(query);
+                                preparedStmt.setString(1, n);
+                                preparedStmt.setString(2, phoneno);
+                                preparedStmt.setString(3, loc);
+                                preparedStmt.setString(4, region);
+                                preparedStmt.executeUpdate();
 
+                            }
+                        } catch (Exception e1) {
+                            System.out.println(e1);
                         }
                     }
-                    catch(Exception e1){
-                        System.out.println(e1);
+                    else if(category == "Rescuer"){
+                        try {
+                            Class.forName("com.mysql.jdbc.Driver");
+                            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/rescuer", "root", "root");
+                            Statement statement = con.createStatement();
+
+                            String query = "";
+                            query = "INSERT INTO Rescuer VALUES ( ? , ? , ? ,0);";
+
+                            PreparedStatement preparedStmt;
+                            if (query != "") {
+                                preparedStmt = con.prepareStatement(query);
+                                preparedStmt.setString(1, n);
+                                preparedStmt.setString(2, region);
+                                preparedStmt.setString(3, phoneno);
+                                preparedStmt.executeUpdate();
+
+                            }
+                        } catch (Exception e1) {
+                            System.out.println(e1);
+                        }
                     }
 
                 }
@@ -175,8 +195,8 @@ public class RegisterationFrom extends JFrame {
             add(r1);
             add(r2);
             add(b);
-            add(b1);
             add(cb2);
+            add(b1);
             add(l7);
             setSize(400,500);
             setLocationRelativeTo(null);

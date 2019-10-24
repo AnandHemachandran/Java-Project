@@ -3,14 +3,14 @@ package Form.Model;
 public class Rescuer {
 
     private int id;
-    private String name,location,contactno;
-    boolean completed;
+    private String name,region,contactno;
+    boolean active;
     public Rescuer() {}
-    public Rescuer(String name, String location, String contactno, boolean completed) {
+    public Rescuer(String name, String region, String contactno, boolean active) {
         this.name = name;
-        this.location = location;
+        this.region = region;
         this.contactno = contactno;
-        this.completed = completed;
+        this.active = active;
     }
     public int getId() {
         return id;
@@ -24,11 +24,11 @@ public class Rescuer {
     public void setName(String name) {
         this.name = name;
     }
-    public String getLocation() {
-        return location;
+    public String getRegion() {
+        return region;
     }
-    public void setLocation(String location) {
-        this.location = location;
+    public void setRegion(String location) {
+        this.region = location;
     }
     public String getContactno() {
         return contactno;
@@ -37,9 +37,9 @@ public class Rescuer {
         this.contactno = contactno;
     }
     public boolean getCheck() {
-        return completed;
+        return active;
     }
     public void setCheck(boolean com) {
-        this.completed  = com;
+        this.active = com;
     }
 }
