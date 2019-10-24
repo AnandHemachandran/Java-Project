@@ -3,13 +3,14 @@ package Form.Model;
 public class Victim {
 
         private int id;
-        private String name,location,email,contactno;
+        private String name,location,contactno;
+        boolean completed;
         public Victim() {}
-        public Victim(String name, String location, String email, String contactno) {
+        public Victim(String name, String location, String contactno, boolean completed) {
             this.name = name;
             this.location = location;
-            this.email = email;
             this.contactno = contactno;
+            this.completed = completed;
         }
         public int getId() {
             return id;
@@ -29,16 +30,16 @@ public class Victim {
         public void setLocation(String location) {
             this.location = location;
         }
-        public String getEmail() {
-            return email;
-        }
-        public void setEmail(String email) {
-            this.email = email;
-        }
         public String getContactno() {
             return contactno;
         }
         public void setContactno(String contactno) {
             this.contactno = contactno;
+        }
+        public boolean getCheck() {
+        return completed;
+    }
+        public void setCheck(boolean com) {
+        this.completed  = com;
         }
 }

@@ -48,6 +48,10 @@ public class RegisterationFrom extends JFrame {
 
             String list[] = {"Select","Victim","Rescuer"};
             JComboBox<String> cb = new JComboBox(list);
+
+            String list2[] = {"Input Region","Thiruvananthapuram","Kollam","Alappuzha","Pathanamthitta","Kottayam","Idukki","Ernakulam","Thrissur","Palakkad","Malappuram","Kozhikode","Wayanadu","Kannur","Kasaragod"};
+            JComboBox<String> cb2 = new JComboBox(list2);
+
             JRadioButton r1 = new JRadioButton("A. Male");
             r1.setFont(new java.awt.Font("Work Sans", 2, 15));
 
@@ -81,11 +85,11 @@ public class RegisterationFrom extends JFrame {
             cb.setBounds(150,170,150,20);
             r1.setBounds(150,200,110,20);
             r2.setBounds(260,200,110,20);
+            cb2.setBounds(40,240,150,20);
 
-
-            b.setBounds(20,260,160,30);
-            b1.setBounds(200,260,160,30);
-            l7.setBounds(10,290,450,20);
+            b.setBounds(20,290,160,30);
+            b1.setBounds(200,290,160,30);
+            l7.setBounds(10,320,450,20);
             b.addActionListener(new ActionListener() {
 
                 @Override
@@ -134,7 +138,7 @@ public class RegisterationFrom extends JFrame {
 
                         String query ="";
                         if(category == "Victim"){
-                            query = "INSERT INTO Victims VALUES ( ? , ? , ? , 1 );";
+                            query = "INSERT INTO Victims VALUES ( ? , ? , ? , 0 );";
                         }
                         PreparedStatement preparedStmt;
                         if(query != "") {
@@ -146,12 +150,11 @@ public class RegisterationFrom extends JFrame {
                             preparedStmt.executeUpdate();
 
                         }
-
-
                     }
                     catch(Exception e1){
                         System.out.println(e1);
                     }
+
                 }
             });
 
@@ -173,6 +176,7 @@ public class RegisterationFrom extends JFrame {
             add(r2);
             add(b);
             add(b1);
+            add(cb2);
             add(l7);
             setSize(400,500);
             setLocationRelativeTo(null);
