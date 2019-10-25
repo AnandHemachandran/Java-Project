@@ -5,6 +5,8 @@ import Form.Model.Victim;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
 import javax.swing.plaf.nimbus.State;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -22,8 +24,12 @@ import java.util.ArrayList;
 public class Inquiry extends JFrame
     {
         JTable jt = new JTable();
+        JComboBox<String> cb;
+        JComboBox<String> cb2;
+        DefaultTableModel model = new DefaultTableModel();;
+        DefaultTableModel rmodel = new DefaultTableModel();;
 
-    public Inquiry(String s)
+        public Inquiry(String s)
 
     {
         super(s);
@@ -35,35 +41,30 @@ public class Inquiry extends JFrame
     {
 
         JScrollPane scrollPane = new JScrollPane(jt);
-        DefaultTableModel model = new DefaultTableModel();;
-        DefaultTableModel rmodel = new DefaultTableModel();;
 
-        JButton b1 = new JButton("Victim");
-        JButton b2 = new JButton("Rescuer");
+
         JButton b3 = new JButton("Filter");
         String list[] = {"Input Region","Trivandrum","Kollam","Alappuzha","Pathanamthitta","Kottayam","Idukki","Ernakulam","Thrissur","Palakkad","Malappuram","Kozhikode","Wayanadu","Kannur","Kasaragod"};
-        JComboBox<String> cb = new JComboBox(list);
+        cb = new JComboBox(list);
         String list2[] = {"Category","Victim","Rescuer"};
-        JComboBox<String> cb2 = new JComboBox(list2);
+        cb2 = new JComboBox(list2);
         String[] columnNames = { "Name", "Age", "Location","Phone No." };
 
         cb2.setBounds(20,140,200,30);
         cb.setBounds(20,50,200,30);
-        b1.setBounds(20,240,200,40);
-        b2.setBounds(20,290,200,40);
         b3.setBounds(20,340,200,40);
         scrollPane.setBounds(300, 50, 550, 500);
         jt.setBorder(new LineBorder(null));
 
         model.addColumn("Name");
-        model.addColumn("Contact Info.");
         model.addColumn("Address");
-        model.addColumn("Region");
+        model.addColumn("Contact No.");
         model.addColumn("Check");
+        model.addColumn("Region");
 
         rmodel.addColumn("Name");
+        rmodel.addColumn("Contact No.");
         rmodel.addColumn("Region");
-        rmodel.addColumn("Contact Info.");
         rmodel.addColumn("Active");
 
         b3.addActionListener(new ActionListener() {
@@ -81,11 +82,19 @@ public class Inquiry extends JFrame
             }
         });
 
+        model.addTableModelListener(new TableModelListener() {
+            public void tableChanged(TableModelEvent e) {
+                remodel(e);
+            }
+        });
+
+//        if (jt.getCellEditor() != null) {
+//            jt.getCellEditor().stopCellEditing();
+//
+//        }
 
         add(cb2);
         add(cb);
-        add(b1);
-        add(b2);
         add(b3);
         getContentPane().add(scrollPane);
         setSize(950,600);
@@ -100,10 +109,23 @@ public class Inquiry extends JFrame
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/victim", "root", "root"); //Connecting MySQL to java via JDBC API.
-                Statement stmt = con.createStatement();
-                String query = "SELECT * FROM Victims";
-                Statement st = con.createStatement();
-                ResultSet rs = st.executeQuery(query);
+                String query = "";
+                ResultSet rs;
+                String reg = (String)cb.getSelectedItem();
+
+                if(cb.getSelectedItem() == "Input Region") {
+                    query = "SELECT * FROM Victims";
+                    Statement st = con.createStatement();
+                    rs = st.executeQuery(query);
+                }
+                else {
+                    query = "SELECT * FROM Victims WHERE region like ? ";
+                    PreparedStatement preparedStmt = con.prepareStatement(query);
+                    preparedStmt.setString(1, reg+"");
+                    System.out.println(preparedStmt);
+                    rs = preparedStmt.executeQuery();
+                }
+
                 Victim victim;
                 while(rs.next()){
                     victim =new Victim(rs.getString("name"),rs.getString("mobile"),rs.getString("address"),rs.getBoolean("completed"),rs.getString("region"));
@@ -119,6 +141,7 @@ public class Inquiry extends JFrame
         public void showVicitm(){
             ArrayList<Victim> list = victimList();
             DefaultTableModel model = (DefaultTableModel)jt.getModel();
+            model.setRowCount(0);
             Object[] row = new Object[5];
             for(int i=0;i<list.size();i++){
                 row[0]=list.get(i).getName();
@@ -137,10 +160,24 @@ public class Inquiry extends JFrame
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/rescuer", "root", "root"); //Connecting MySQL to java via JDBC API.
-                Statement stmt = con.createStatement();
-                String query = "SELECT * FROM Rescuer";
-                Statement st1 = con.createStatement();
-                ResultSet rs1 = st1.executeQuery(query);
+
+                String query = "";
+                ResultSet rs1;
+                String reg = (String)cb.getSelectedItem();
+
+                if(cb.getSelectedItem() == "Input Region") {
+                    query = "SELECT * FROM Rescuer";
+                    Statement st = con.createStatement();
+                    rs1 = st.executeQuery(query);
+                }
+                else {
+                    query = "SELECT * FROM Rescuer WHERE region like ? ";
+                    PreparedStatement preparedStmt = con.prepareStatement(query);
+                    preparedStmt.setString(1, reg+"");
+                    System.out.println(preparedStmt);
+                    rs1 = preparedStmt.executeQuery();
+                }
+
                 Rescuer rescuer;
                 while(rs1.next()){
                     rescuer =new Rescuer(rs1.getString("name"),rs1.getString("region"),rs1.getString("phone"),rs1.getBoolean("active"));
@@ -156,6 +193,7 @@ public class Inquiry extends JFrame
         public void showRescuer(){
             ArrayList<Rescuer> list = rescuerList();
             DefaultTableModel rmodel = (DefaultTableModel)jt.getModel();
+            rmodel.setRowCount(0);
             Object[] row = new Object[5];
             for(int i=0;i<list.size();i++){
                 row[0]=list.get(i).getName();
@@ -166,5 +204,22 @@ public class Inquiry extends JFrame
             }
 
         }
+
+        protected void remodel(TableModelEvent e){
+            if (e.getType() == TableModelEvent.UPDATE) {
+                model = (DefaultTableModel)e.getSource();
+                int r = e.getFirstRow();
+                int c = e.getColumn();
+            }
+            System.out.println("Table Changes");
+
+            //Work in Progress
+            //Implements the code to get the change in the Jtable model to directly change the data in the SQL,
+            //which can later affect the model using the victimList() or the rescuerList() correspondingly.
+        }
+
+
+
+
     }
 

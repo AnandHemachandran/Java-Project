@@ -50,7 +50,7 @@ public class RegisterationFrom extends JFrame {
             String list[] = {"Select","Victim","Rescuer"};
             JComboBox<String> cb = new JComboBox(list);
 
-            String list2[] = {"Input Region","Thiruvananthapuram","Kollam","Alappuzha","Pathanamthitta","Kottayam","Idukki","Ernakulam","Thrissur","Palakkad","Malappuram","Kozhikode","Wayanadu","Kannur","Kasaragod"};
+            String list2[] = {"Input Region","Trivandrum","Kollam","Alappuzha","Pathanamthitta","Kottayam","Idukki","Ernakulam","Thrissur","Palakkad","Malappuram","Kozhikode","Wayanadu","Kannur","Kasaragod"};
             JComboBox<String> cb2 = new JComboBox(list2);
 
             JRadioButton r1 = new JRadioButton("A. Male");
